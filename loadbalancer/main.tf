@@ -1,8 +1,22 @@
 
+# tags tags tags tags tags tags tags tags
+# tags tags tags tags tags tags tags tags
+resource "digitalocean_tag" "tenant" {
+  name = var.tenant
+}
+resource "digitalocean_tag" "environment" {
+  name = var.environment
+}
+
 resource "digitalocean_loadbalancer" "lb" {
   name      = var.name
   region    = var.region
   vpc_uuid  = var.vpc_id
+
+  tags               = [
+    digitalocean_tag.tenant.id,
+    digitalocean_tag.environment.id
+  ]
 
   forwarding_rule {
     tls_passthrough = var.tls_passthrough

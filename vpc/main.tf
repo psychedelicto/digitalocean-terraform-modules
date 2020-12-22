@@ -2,6 +2,14 @@
 ##Description : This Script is used to create VPC.
 ## Copyright @ CloudDrove. All Right Reserved.
 
+# tags tags tags tags tags tags tags tags
+# tags tags tags tags tags tags tags tags
+resource "digitalocean_tag" "tenant" {
+  name = var.tenant
+}
+resource "digitalocean_tag" "environment" {
+  name = var.environment
+}
 
 #Module      : VPC
 #Description : VPCs are virtual networks containing resources that can communicate with each other in full isolation, using private IP addresses.
@@ -12,4 +20,10 @@ resource "digitalocean_vpc" "default" {
   region      = var.region
   description = var.description
   ip_range    = var.ip_ragne
+
+  tags               = [
+    digitalocean_tag.tenant.id,
+    digitalocean_tag.environment.id
+  ]
+
 }
