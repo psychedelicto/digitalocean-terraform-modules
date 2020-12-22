@@ -138,3 +138,15 @@ variable "vpc_uuid" {
   default     = ""
   description = "The ID of the VPC where the Droplet will be located."
 }
+
+variable "tenant" {
+  type        = string
+  default     = ""
+  description = "The tenant tag"
+}
+
+variable "environment" {
+  type        = string
+  default     = ""
+  description = "The environment tag"
+}

@@ -34,7 +34,11 @@ resource "digitalocean_droplet" "main" {
   user_data          = var.user_data
   vpc_uuid           = var.vpc_uuid
 
-  tags               = [digitalocean_tag.tenant.id,digitalocean_tag.env.id]
+  tags               = [
+    digitalocean_tag.tenant.id,
+    digitalocean_tag.env.id
+  ]
+  
 }
 #
 # #Module      : Volume
