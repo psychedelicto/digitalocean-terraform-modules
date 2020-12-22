@@ -1,9 +1,20 @@
+# tags tags tags tags tags tags tags tags
+# tags tags tags tags tags tags tags tags
+resource "digitalocean_tag" "tenant" {
+  name = var.tenant
+}
+resource "digitalocean_tag" "env" {
+  name = var.environment
+}
+
 
 # Lookup image to get id
 data "digitalocean_image" "official" {
   count = var.custom_image == true ? 0 : 1
   slug  = var.image_name
 }
+
+
 
 #Module      : Droplet
 #Description : Provides a DigitalOcean Droplet resource. This can be used to create, modify, and delete Droplets.
@@ -22,6 +33,8 @@ resource "digitalocean_droplet" "main" {
   resize_disk        = var.resize_disk
   user_data          = var.user_data
   vpc_uuid           = var.vpc_uuid
+
+  tags               = [digitalocean_tag.tenant.id,digitalocean_tag.env.id]
 }
 #
 # #Module      : Volume
