@@ -55,3 +55,15 @@ variable "ip_ragne" {
   default     = "10.10.0.0/16"
   description = "The range of IP addresses for the VPC in CIDR notation. Network ranges cannot overlap with other networks in the same account and must be in range of private addresses as defined in RFC1918. It may not be larger than /16 or smaller than /24."
 }
+
+variable "tenant" {
+  type        = string
+  default     = ""
+  description = "The tenant tag"
+}
+
+variable "environment" {
+  type        = string
+  default     = ""
+  description = "The environment tag"
+}
