@@ -13,11 +13,6 @@ resource "digitalocean_loadbalancer" "lb" {
   region    = var.region
   vpc_uuid  = var.vpc_id
 
-  tags               = [
-    digitalocean_tag.tenant.id,
-    digitalocean_tag.environment.id
-  ]
-
   forwarding_rule {
     tls_passthrough = var.tls_passthrough
     entry_port     = 443
