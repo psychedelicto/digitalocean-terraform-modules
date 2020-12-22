@@ -1,10 +1,10 @@
 # tags tags tags tags tags tags tags tags
 # tags tags tags tags tags tags tags tags
 resource "digitalocean_tag" "tenant" {
-  name = "pis"
+  name = var.tenant
 }
 resource "digitalocean_tag" "environment" {
-  name = "caca"
+  name = var.environment
 }
 
 
@@ -34,10 +34,10 @@ resource "digitalocean_droplet" "main" {
   user_data          = var.user_data
   vpc_uuid           = var.vpc_uuid
 
-  # tags               = [
-  #   digitalocean_tag.tenant.id,
-  #   digitalocean_tag.environment.id
-  # ]
+  tags               = [
+    digitalocean_tag.tenant.id,
+    digitalocean_tag.environment.id
+  ]
 
 }
 #
