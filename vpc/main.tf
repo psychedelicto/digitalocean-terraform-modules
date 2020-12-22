@@ -21,9 +21,4 @@ resource "digitalocean_vpc" "default" {
   description = var.description
   ip_range    = var.ip_ragne
 
-  tags               = [
-    digitalocean_tag.tenant.id,
-    digitalocean_tag.environment.id
-  ]
-
 }
