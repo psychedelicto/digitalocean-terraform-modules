@@ -1,6 +1,6 @@
 #Module      : LABEL
 #Description : Terraform label module variables.
-variable "name" {
+variable "name_vpc" {
   type        = string
   default     = ""
   description = "Name  (e.g. `app` or `cluster`)."
