@@ -51,7 +51,7 @@ resource "digitalocean_volume" "main" {
   region                   = var.region
   name                     = var.name
   size                     = var.block_storage_size_.var.name
-  description              = "Block storage for "var.name""
+  description              = "Block storage for"
   initial_filesystem_label = var.block_storage_filesystem_label
   initial_filesystem_type  = var.block_storage_filesystem_type
 }
