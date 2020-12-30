@@ -4,6 +4,7 @@ variable "region" {}
 variable "name" {}
 variable "vpc_id" {}
 variable "tls_passthrough" {}
+variable "ssl_cert" {}
 variable "tenant" {
   type        = string
   default     = ""

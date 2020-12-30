@@ -27,5 +27,6 @@ resource "digitalocean_loadbalancer" "lb" {
     protocol = "tcp"
   }
 
-  droplet_ids = var.target_droplets
+  droplet_ids       = var.target_droplets
+  certificate_name  = var.ssl_cert 
 }
