@@ -20,6 +20,8 @@ resource "digitalocean_loadbalancer" "lb" {
 
     target_port     = var.target_port
     target_protocol = "https"
+
+    certificate_name  = var.ssl_cert 
   }
 
   healthcheck {
@@ -28,5 +30,4 @@ resource "digitalocean_loadbalancer" "lb" {
   }
 
   droplet_ids       = var.target_droplets
-  certificate_name  = var.ssl_cert 
 }
