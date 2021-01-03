@@ -19,6 +19,4 @@ resource "digitalocean_vpc" "default" {
   name        = var.name
   region      = var.region
   description = var.description
-  ip_range    = var.ip_ragne
-
 }
