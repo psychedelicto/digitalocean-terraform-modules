@@ -5,14 +5,12 @@ variable "name" {
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
-variable "delimiter" {
+variable "ip_range" {
   type        = string
-  default     = "-"
-  description = "Delimiter to be used between `organization`, `environment`, `name` and `attributes`."
+  default     = ""
+  description = "VPS CIDR for customer components"
 }
 
-#Module      : VPC
-#Description : VPCs are virtual networks containing resources that can communicate with each other in full isolation, using private IP addresses.
 variable "enable_vpc" {
   type        = bool
   default     = true
